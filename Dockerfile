@@ -13,6 +13,7 @@ RUN apk --update add \
     libpng-dev \
     libtool \
     libbz2 \
+    bzip2 \
     libstdc++ \
     libxslt-dev \
     openldap-dev \
