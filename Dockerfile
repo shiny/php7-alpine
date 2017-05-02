@@ -29,8 +29,8 @@ RUN apk --update add \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
     pecl install imagick && \
     docker-php-ext-enable imagick && \
-    pecl install swoole-beta && \
-    docker-php-ext-enable swoole-beta && \
+    pecl install swoole-2.0.7 && \
+    docker-php-ext-enable swoole-2.0.7 && \
     docker-php-ext-install gd && \
     docker-php-ext-enable opcache && \
     apk del build-base \
