@@ -21,6 +21,7 @@ RUN apk --update add \
     libxslt-dev \
     openldap-dev \
     imagemagick-dev \
+    hiredis-dev \
     make \
     unzip \
     wget && \
@@ -28,8 +29,8 @@ RUN apk --update add \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
     pecl install imagick && \
     docker-php-ext-enable imagick && \
-    pecl install swoole && \
-    docker-php-ext-enable swoole && \
+    pecl install swoole-beta && \
+    docker-php-ext-enable swoole-beta && \
     docker-php-ext-install gd && \
     docker-php-ext-enable opcache && \
     apk del build-base \
