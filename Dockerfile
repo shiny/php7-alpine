@@ -4,6 +4,9 @@ FROM php:7-fpm-alpine
 RUN apk --update add \
     autoconf \
     build-base \
+    linux-headers \
+    libaio-dev \
+    zlib-dev \
     curl \
     git \
     subversion \
@@ -20,8 +23,7 @@ RUN apk --update add \
     imagemagick-dev \
     make \
     unzip \
-    wget \
-    libaio-dev && \
+    wget && \
     docker-php-ext-install bcmath mcrypt zip bz2 pdo_mysql mysqli simplexml opcache sockets mbstring pcntl xsl && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
     pecl install imagick && \
@@ -30,8 +32,10 @@ RUN apk --update add \
     docker-php-ext-enable swoole && \
     docker-php-ext-install gd && \
     docker-php-ext-enable opcache && \
-    apk del build-base && \
-    rm -rf /var/cache/apk/*
+    apk del build-base \
+    linux-headers \
+    libaio-dev \
+    && rm -rf /var/cache/apk/*
 
 
 
