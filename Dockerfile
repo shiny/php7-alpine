@@ -30,7 +30,7 @@ RUN apk --update add \
     pecl install imagick && \
     docker-php-ext-enable imagick && \
     pecl install swoole-2.0.7 && \
-    docker-php-ext-enable swoole-2.0.7 && \
+    docker-php-ext-enable swoole && \
     docker-php-ext-install gd && \
     docker-php-ext-enable opcache && \
     apk del build-base \
