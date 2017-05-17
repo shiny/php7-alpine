@@ -29,14 +29,7 @@ RUN apk --update add \
     docker-php-ext-install bcmath mcrypt zip bz2 pdo_mysql mysqli simplexml opcache sockets mbstring pcntl xsl pspell && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
     pecl install imagick && \
-    docker-php-ext-enable imagick
-RUN curl -L -o /tmp/swoole.tgz https://github.com/swoole/swoole-src/archive/v2.0.7.tar.gz && \
-    tar xfz /tmp/swoole.tgz && \
-    rm -r /tmp/swoole.tgz && \
-    mkdir -p /usr/src/php/ext && \
-    mv swoole /usr/src/php/ext/swoole && \
-    docker-php-ext-configure swoole --enable-coroutine --enable-async-redis && \
-    docker-php-ext-install swoole && \
+    docker-php-ext-enable imagick && \
     docker-php-ext-install gd && \
     docker-php-ext-enable opcache && \
     apk del build-base \
