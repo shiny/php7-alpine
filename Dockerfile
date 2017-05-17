@@ -2,7 +2,7 @@ FROM php:7-fpm-alpine
 
 # Packages
 RUN apk --update add \
-    aspell-libs \
+    aspell-dev \
     autoconf \
     build-base \
     linux-headers \
