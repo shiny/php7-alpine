@@ -33,7 +33,7 @@ RUN apk --update add \
 RUN curl -L -o /tmp/swoole.tgz https://github.com/swoole/swoole-src/archive/v2.0.7.tar.gz && \
     tar xfz /tmp/swoole.tgz && \
     rm -r /tmp/swoole.tgz && \
-    && mkdir -p /usr/src/php/ext \
+    mkdir -p /usr/src/php/ext && \
     mv swoole /usr/src/php/ext/swoole && \
     docker-php-ext-configure swoole --enable-coroutine --enable-async-redis && \
     docker-php-ext-install swoole && \
