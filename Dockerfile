@@ -35,6 +35,7 @@ RUN apk --update add \
     apk del build-base \
     linux-headers \
     libaio-dev \
+    ffmpeg \
     && rm -rf /var/cache/apk/*
 
 
