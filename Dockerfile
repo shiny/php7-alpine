@@ -25,6 +25,7 @@ RUN apk --update add \
     hiredis-dev \
     make \
     unzip \
+    ffmpeg \
     wget && \
     docker-php-ext-install bcmath mcrypt zip bz2 pdo_mysql mysqli simplexml opcache sockets mbstring pcntl xsl pspell && \
     docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
@@ -35,7 +36,6 @@ RUN apk --update add \
     apk del build-base \
     linux-headers \
     libaio-dev \
-    ffmpeg \
     && rm -rf /var/cache/apk/*
 
 
